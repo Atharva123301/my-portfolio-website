@@ -88,6 +88,18 @@ document.querySelectorAll('.section, .project-card, .skill-card').forEach((eleme
     cardObserver.observe(element);
 });
 
+document.querySelectorAll('.social-link').forEach((icon) => {
+    icon.addEventListener('mouseenter', () => {
+        icon.classList.remove('is-bouncing');
+        void icon.offsetWidth;
+        icon.classList.add('is-bouncing');
+    });
+
+    icon.addEventListener('mouseleave', () => {
+        icon.classList.remove('is-bouncing');
+    });
+});
+
 document.querySelector('.contact-form')?.addEventListener('submit', (event) => {
     event.preventDefault();
     alert('Thanks for reaching out! Your message has been captured.');
